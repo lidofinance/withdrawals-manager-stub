@@ -8,12 +8,17 @@ pragma solidity 0.8.4;
  */
 contract Test__NewImplementation {
     event SmthHappened();
+    event EtherReceived(uint256 amount);
 
     function wasUpgraded() external pure returns (bool) {
         return true;
     }
 
     function doSmth() external {
-      emit SmthHappened();
+        emit SmthHappened();
+    }
+
+    receive() external payable {
+        emit EtherReceived(msg.value);
     }
 }

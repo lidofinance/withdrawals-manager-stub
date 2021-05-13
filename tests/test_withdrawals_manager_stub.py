@@ -47,7 +47,8 @@ def test_voting_can_change_implementation(
     withdrawals_proxy,
     new_impl,
     helpers,
-    Test__NewImplementation
+    Test__NewImplementation,
+    stranger
 ):
     print(f'starting vote for withdrawals proxy upgrade...')
 
@@ -67,6 +68,9 @@ def test_voting_can_change_implementation(
     )
 
     assert withdrawals.wasUpgraded()
+
+    tx = stranger.transfer(withdrawals, '1 ether', gas_limit=400_000)
+    helpers.assert_single_event_named('EtherReceived', tx, {'amount': '1 ether'})
 
 
 def test_admin_can_call_implementation_methods(
