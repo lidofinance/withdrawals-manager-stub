@@ -23,3 +23,10 @@ proxy admin from the DAO Voting contract to a zero address (which is an irrevers
 
 [`WithdrawalsManagerStub`]: ./contracts/WithdrawalsManagerStub.sol
 [`WithdrawalsManagerProxy`]: ./contracts/WithdrawalsManagerProxy.sol
+
+
+## Audits
+
+This contract [was audited by MixBytes] in May, 2021.
+
+[was audited by MixBytes]: https://github.com/lidofinance/audits#05-2021-mixbytes-audit-withdrawals-manager-proxy-and-stub
